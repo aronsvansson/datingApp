@@ -20,10 +20,8 @@
         function InformationCard(){
             return '<div>' . $this->username . $this->password . '</div>';
         }
-    }
 
-    $sqllist = "SELECT * FROM userInfo ORDER BY id DESC LIMIT 1";
-    $recent = $mySQL->query($sqllist);
+    }
 
 
 ?>
@@ -39,7 +37,7 @@ Højde: <input type="number" name="height" required><br>
 Alder: <input type="text" name="age" required><br>
 Køn: <input type="text" name="gender" required><br>
 Brugernavn: <input type="text" name="username" required><br>
-Kodeord: <input type="text" name="password" required><br>
+Kodeord: <input type="password" name="password" required><br>
 
 <input type="submit">
 </form>
