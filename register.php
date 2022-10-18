@@ -22,7 +22,7 @@
         }
     }
 
-    $sqllist = "SELECT * FROM signup ORDER BY id DESC LIMIT 1";
+    $sqllist = "SELECT * FROM userInfo ORDER BY id DESC LIMIT 1";
     $recent = $mySQL->query($sqllist);
 
 

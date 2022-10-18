@@ -4,26 +4,26 @@
 
 //    echo $_POST["firstname"].$_POST["lastname"].$_POST["username"].$_POST["password"].$_POST["gender"];
 
-    $firstname = $_POST["firstname"];
-    $lastname = $_POST["lastname"];
-    $height = $_POST["height"];
-    $age = $_POST["age"];
-    $gender = $_POST["gender"];
-    $username = $_POST["username"];
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    $firstname = $_REQUEST["firstname"];
+    $lastname = $_REQUEST["lastname"];
+    $height = $_REQUEST["height"];
+    $age = $_REQUEST["age"];
+    $gender = $_REQUEST["gender"];
+    $username = $_REQUEST["username"];
+    $password = $_REQUEST["password"];
 
-    $signUpPersonalInfo = "INSERT INTO userInfo (firstname, lastname, height, age, gender)
+    $newUserInfo = "INSERT INTO userInfo (firstname, lastname, height, age, gender)
     VALUES ('$firstname','$lastname','$height','$age','$gender')";
-    $mySQL = $mySQL->query($signUpPersonalInfo);
+    $mySQLfind = $mySQL->query($newUserInfo);
 
  
     $findUser = "SELECT id FROM userInfo ORDER BY id DESC LIMIT 1";
-    $response = $mySQL -> query($findUser);
+    $response = $mySQL->query($findUser);
     $data = $response->fetch_object();
     
-
+    $passwordHash = password_hash($_POST["password"], PASSWORD_DEFAULT);
     $signupPass = "INSERT INTO userPass (id, username, password) 
-    VALUES ('$data->id','$username', '$password')";
+    VALUES ('$data->id','$username', '$passwordHash')";
     $response = $mySQL->query($signupPass);
 
 
