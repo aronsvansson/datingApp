@@ -33,20 +33,20 @@
 
 
 <form action="backend.php" method="post">
-Firstname: <input type="text" name="firstname"><br>
-Lastname: <input type="text" name="lastname"><br>
-Height: <input type="number" name="height"><br>
-Age: <input type="text" name="age"><br>
-Gender: <input type="text" name="gender"><br>
-Username: <input type="text" name="username"><br>
-Password: <input type="text" name="password"><br>
+Fornavn: <input type="text" name="firstname" required><br>
+Efternavn: <input type="text" name="lastname" required><br>
+Højde: <input type="number" name="height" required><br>
+Alder: <input type="text" name="age" required><br>
+Køn: <input type="text" name="gender" required><br>
+Brugernavn: <input type="text" name="username" required><br>
+Kodeord: <input type="text" name="password" required><br>
 
 <input type="submit">
 </form>
 
 <form action="backend.php" method="post">
-E-mail: <input type="text" name="username">
-Password: <input type="password" name="password">
+Brugernavn: <input type="text" name="username">
+Kodeord: <input type="password" name="password">
 
 </form>
 
