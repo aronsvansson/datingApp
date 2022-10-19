@@ -15,6 +15,11 @@
         $sql_user = "SELECT * FROM userPass WHERE username='$username'";
         $res_user = mysqli_query($mySQL, $sql_user) or die(mysqli_error($mySQL));
 
+        if(empty($firstname) || empty($lastname) || empty($height) || empty($age) || empty($gender) || empty($username) || empty($password)){
+            echo "Udfyld Alle felter ";
+            exit();
+        }
+        
         if (mysqli_num_rows($res_user)> 0 ) {
             echo "Beklager, brugernavn er allerede taget ";
             exit();
