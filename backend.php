@@ -16,17 +16,17 @@
         $res_user = mysqli_query($mySQL, $sql_user) or die(mysqli_error($mySQL));
 
         if(empty($firstname) || empty($lastname) || empty($height) || empty($age) || empty($gender) || empty($username) || empty($password)){
-            echo "Udfyld Alle felter ";
+            header('location: register.php?error=emptyField');
             exit();
         }
         
         if (mysqli_num_rows($res_user)> 0 ) {
-            echo "Beklager, brugernavn er allerede taget ";
+            header('location: register.php?error=userTaken');
             exit();
         }
         
         if($password !== $passwordRepeat){
-            echo "Kodeord stemmer ikke overens ";
+            header('location: register.php?error=wrongPassword');
             exit();
         }
 
@@ -43,6 +43,8 @@
             $signupPass = "INSERT INTO userPass (id, username, password) 
             VALUES ('$data->id','$username', '$passwordHash')";
             $response = $mySQL->query($signupPass);
+
+            header('location: register.php?error=none');
             }
         }
         

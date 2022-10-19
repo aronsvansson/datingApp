@@ -20,8 +20,22 @@ Gentag kodeord: <input type="password" name="passwordRepeat"><br>
 <input type="submit" name="submit">
 
 </form>
-
-</form>
-
 </body>
 </html>
+
+<?php
+    if (isset($_GET["error"])) {
+        if ($_GET["error"] == "emptyField") {
+            echo "<p>Udfyld Alle felter </p>";
+        }
+        else if ($_GET["error"] == "userTaken") {
+            echo "Beklager, brugernavn er allerede taget ";
+        } 
+        else if ($_GET["error"] == "wrongPassword") {
+            echo "Kodeord stemmer ikke overens ";
+        }
+        else if ($_GET["error"] == "none") {
+            echo "Du er nu registreret!";
+        }
+    }
+?>
