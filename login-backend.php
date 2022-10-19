@@ -8,21 +8,32 @@
     function loginUser(){
         include("mysql.php");
 
-        $username = $_REQUEST["username"];
-        $password = $_REQUEST["password"];
+        $username = isset($_POST["username"]) ? $_POST["username"] : "";
+        $password = isset($_POST["password"]) ? $_POST["password"] : "";
 
+        // get user object form database using login username
         $userQueryString = "SELECT * FROM userPass WHERE username='$username'";
         $result = $mySQL->query($userQueryString);
-        $row = $result->fetch(assoc)();
+        $row = $result->fetch_assoc();
 
-        if (password_verify($password,$row["password"])) 
-        {
-          echo "din login"; 
-        } else 
-          {
-          echo "nej login";
-        
-        };
+        // verify password with hash
+        if (password_verify($password,$row["password"])){
+          // generate token
+          $token = random_bytes(24);
+          // save token in database
+          $userId = $row["id"];
+          $insert_token_string = "INSERT INTO userSession (user_id, token) VALUES ('$userId', '$token')";
+          $mySQL->query($insert_token_string);
+          // save token in session
+          $_SESSION["token"] = $token;
+
+          // redirect to home page
+          header('location: profile.php');
+          
+      } else {
+          header('location: register_login_page.php');
+      } 
+ 
     
     }
 
