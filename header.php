@@ -12,11 +12,11 @@
         <div class="wrapper">
          <a href ="welcome.php"><h1>Dating APP</h1></a>
         <ul>
-            <li><a href="profile.php">Profile</a></li>
+            <li><a href="welcome.php">Profile</a></li>
             <li><a href="match.php">Match list</a></li>
             <li><a href="register.php">Sign up</a></li>
             <li><a href="login.php">Log in</a></li>
-            
+            <a href="logout.php">Logout</a>
         </ul>
         </div>
     </nav>

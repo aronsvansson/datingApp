@@ -1,25 +1,37 @@
 <?php
     include("mysql.php");
+    session_start();
+    if(!isset($_SESSION['id'])) {
+    header('location: login.php?error=wrongLogin');
+    exit;
+}
 
-    $id = $_SESSION['username'];
-
-    if(isset($_POST['submit'])) {
+    if(isset($_POST['update'])) { 
+        $id = $_SESSION['id'];
 
         $firstname = $_REQUEST["firstname"];
         $lastname = $_REQUEST["lastname"];
         $height = $_REQUEST["height"];
         $age = $_REQUEST["age"];
-        $gender = $_REQUEST["gender"];
-        $username = $_REQUEST["username"];
-        $password = $_REQUEST["password"];
-        $passwordRepeat = $_REQUEST["passwordRepeat"];
 
-        $sql_user = "UPDATE * FROM userInfo WHERE username='$id'";
-        $res_user = mysqli_query($mySQL, $sql_user) or die(mysqli_error($mySQL));
-        $hej = $row["id"];
-        echo $hej;
 
+        if(empty($firstname) || empty($lastname) || empty($height) || empty($age)){
+            header('location: welcome.php?status=fail_empty');
+            exit();
         }
+        if($age <= 0) {
+            header('location: welcome.php?status=age_fail');
+            exit();
+        }
+
+        $sql = "UPDATE userInfo SET firstname='$firstname', lastname='$lastname', height='$height', age='$age' WHERE id='$id'";
+        $query_update = mysqli_query($mySQL, $sql);
+      if ($query_update) {
+            header('location: welcome.php?status=success');
+        } else {
+            header('location: welcome.php?status=fail');
+        }
+    }
 
 
 ?>

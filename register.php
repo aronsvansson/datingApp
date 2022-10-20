@@ -1,12 +1,17 @@
 <?php 
     include("mysql.php");
     include_once 'header.php';
+    session_start();
+    if(isset($_SESSION['id'])) {
+    header('location: welcome.php?status=loggedin');
+    exit;
+    }
 ?>
 
 <html>
 <body>
 
-<form action="backend.php" name="register" method="post">
+<form action="register-backend.php" name="register" method="post">
 Fornavn: <input type="text" name="firstname"><br>
 Efternavn: <input type="text" name="lastname"><br>
 Højde: <input type="number" name="height"><br>

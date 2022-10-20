@@ -1,34 +1,49 @@
 .wrapper {
-    display: flex;
-    background-color: rgb(49, 47, 47);
-    justify-content: space-between;
-
+  display: flex;
+  background-color: rgb(49, 47, 47);
+  justify-content: space-between;
 }
 .wrapper h1 {
-    padding: 10px;
-    color: white;
-    font-weight: bold;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
 }
 .wrapper a {
-    text-decoration: none;
+  text-decoration: none;
 }
-.wrapper ul  {
-    display: flex;
-    
-   
+.wrapper ul {
+  display: flex;
 }
 .wrapper li {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-
-
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
 }
 .wrapper li a {
-    text-decoration: none;
-    color: white;
-    float: right;
-    padding: 10px;
-    font-size: 20px;
-    font-weight: bold;
+  text-decoration: none;
+  color: white;
+  float: right;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.update_success {
+  color: green;
+}
+
+.update_fail {
+  color: red;
+}
+
+.loggedin {
+  font-size: larger;
+  color: orange;
+}
+
+.update_fail,
+.update_success,
+.loggedin {
+  width: 100%;
+  text-align: left;
 }

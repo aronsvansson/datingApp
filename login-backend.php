@@ -14,7 +14,6 @@ session_start();
             exit();
         }
 
-
         $sql_user = "SELECT * FROM userPass WHERE username='$username'";
         $result = $mySQL->query($sql_user);
         $row = $result->fetch_assoc();
