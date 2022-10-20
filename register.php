@@ -1,5 +1,6 @@
 <?php 
     include("mysql.php");
+    include_once 'header.php';
 ?>
 
 <html>
@@ -21,8 +22,9 @@ Gentag kodeord: <input type="password" name="passwordRepeat"><br>
 
 <a href="login.php">Login</a>
 </form>
-</body>
-</html>
+<?php 
+include_once 'footer.php';
+?>
 
 <?php
     if (isset($_GET["error"])) {

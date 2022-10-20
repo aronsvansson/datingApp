@@ -7,7 +7,6 @@
 
         $username = $_REQUEST["username"];
         $password = $_REQUEST["password"];
-        echo $password;
 
         if(empty($username) || empty($password)){
             header('location: login.php?error=emptyField');
@@ -18,8 +17,6 @@
         $sql_user = "SELECT * FROM userPass WHERE username='$username'";
         $result = $mySQL->query($sql_user);
         $row = $result->fetch_assoc();
-        echo $row["password"];
-
 
         $hashedPassword = $row["password"];
         $checkPassword = password_verify($password, $hashedPassword);

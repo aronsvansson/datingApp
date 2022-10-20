@@ -1,14 +1,13 @@
 <?php 
     include("mysql.php");
+    
     session_start();
+    include_once 'header.php';
 
     if (isset($_SESSION['token'])) {
         header('location: profile.php');
     }
 ?>
-
-<html>
-<body>
 
 <!-- login form -->    
 <section class="signup-form">
@@ -23,9 +22,9 @@
      </form>
     </div>
 </section>
-
-</body>
-</html>
+<?php
+ include_once 'footer.php';
+?>
 
 
 <?php

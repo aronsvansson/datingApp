@@ -45,7 +45,6 @@
             $response = $mySQL->query($signupPass);
 
             header('location: register.php?error=none');
-
             }
         }
         
