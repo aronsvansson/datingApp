@@ -26,3 +26,15 @@
 
 </body>
 </html>
+
+
+<?php
+    if (isset($_GET["error"])) {
+        if ($_GET["error"] == "emptyField") {
+            echo "<p>Udfyld alle felter </p>";
+        }
+        else if ($_GET["error"] == "noUser") {
+            echo "<p>Ingen bruger fundet </p>";
+        }
+    }
+?>

@@ -19,6 +19,7 @@ Kodeord: <input type="password" name="password"><br>
 Gentag kodeord: <input type="password" name="passwordRepeat"><br>
 <input type="submit" name="submit">
 
+<a href="login.php">Login</a>
 </form>
 </body>
 </html>
@@ -26,7 +27,7 @@ Gentag kodeord: <input type="password" name="passwordRepeat"><br>
 <?php
     if (isset($_GET["error"])) {
         if ($_GET["error"] == "emptyField") {
-            echo "<p>Udfyld Alle felter </p>";
+            echo "<p>Udfyld alle felter </p>";
         }
         else if ($_GET["error"] == "userTaken") {
             echo "Beklager, brugernavn er allerede taget ";
