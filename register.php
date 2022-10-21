@@ -26,7 +26,7 @@
 <input type="number" name="height"><br>
 
 <label for="age">Alder</label>
-<input type="text" name="age"><br>
+<input type="number" name="age"><br>
 
 <label for="gender">Køn</label>
 <select type="text" name="gender">
