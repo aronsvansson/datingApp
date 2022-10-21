@@ -6,6 +6,8 @@
     header('location: welcome.php?status=loggedin');
     exit;
     }
+
+
 ?>
 
 <html>
@@ -17,16 +19,21 @@
     <div class="form-flex">
     <div class="register-info">
 <label for="firstname">Fornavn</label>
-<input type="text" name="firstname"><br>
+<input type="text" name="firstname" <?php if(isset($_SESSION['firstname'])!=""){ 
+    echo " value='".$_SESSION['firstname']."'"; }?>
+><br>
 
 <label for="lastname">Efternavn</label>
-<input type="text" name="lastname"><br>
+<input type="text" name="lastname" <?php if(isset($_SESSION['lastname'])!=""){ 
+    echo " value='".$_SESSION['lastname']."'"; }?>><br>
 
 <label for="height">Højde</label>
-<input type="number" name="height"><br>
+<input type="number" name="height" <?php if(isset($_SESSION['height'])!=""){ 
+    echo " value='".$_SESSION['height']."'"; }?>><br>
 
 <label for="age">Alder</label>
-<input type="number" name="age"><br>
+<input type="number" name="age" <?php if(isset($_SESSION['age'])!=""){ 
+    echo " value='".$_SESSION['age']."'"; }?>><br>
 
 <label for="gender">Køn</label>
 <select type="text" name="gender">
@@ -36,7 +43,8 @@
     </div>
 <div class="register-login">
 <label for="username">Brugernavn</label>
-<input type="text" name="username"><br>
+<input type="text" name="username" <?php if(isset($_SESSION['username'])!=""){ 
+    echo " value='".$_SESSION['username']."'"; }?>><br>
 
 <label for="password">Kodeord</label>
 <input type="password" name="password"><br>

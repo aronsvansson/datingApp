@@ -1,5 +1,8 @@
 <?php
     include("mysql.php");
+    session_start();
+
+
 
     if(isset($_POST['submit'])) {
 
@@ -12,6 +15,25 @@
         $password = $_REQUEST["password"];
         $passwordRepeat = $_REQUEST["passwordRepeat"];
 
+        if(isset($_POST['firstname']) !=""){
+        $_SESSION['firstname'] = $_POST['firstname'];}
+
+        if(isset($_POST['lastname']) !=""){
+        $_SESSION['lastname'] = $_POST['lastname'];}
+
+        if(isset($_POST['height']) !=""){
+        $_SESSION['height'] = $_POST['height'];}
+
+        if(isset($_POST['age']) !=""){
+        $_SESSION['age'] = $_POST['age'];}
+
+        if(isset($_POST['age']) !=""){
+        $_SESSION['age'] = $_POST['age'];}
+
+        if(isset($_POST['username']) !=""){
+        $_SESSION['username'] = $_POST['username'];}
+        
+
         $sql_user = "SELECT * FROM userPass WHERE username='$username'";
         $res_user = mysqli_query($mySQL, $sql_user) or die(mysqli_error($mySQL));
 
@@ -21,12 +43,14 @@
         }
         
         if (mysqli_num_rows($res_user)> 0 ) {
+            $_SESSION['username'] = "";
             header('location: register.php?error=userTaken');
             exit();
         }
         
         if($password !== $passwordRepeat){
             header('location: register.php?error=wrongPassword');
+            
             exit();
         }
 
@@ -47,6 +71,5 @@
             header('location: register.php?error=none');
             }
         }
-        
 
 ?>

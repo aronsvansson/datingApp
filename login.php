@@ -17,10 +17,10 @@
      <h2>Login</h2>
 
         <label for="username">Brugernavn</label>
-        <input type="text" name="username" placeholder="Brugernavn...">
+        <input type="text" name="username" placeholder="  Brugernavn...">
 
         <label for="password">Adgangskode</label>
-        <input type="password" name="password" placeholder="Adgangskode...">
+        <input type="password" name="password" placeholder="    Adgangskode...">
 
         <button type="submit" name="submit">Login</button>
         <div class="opret-bruger"><a href="register.php">Opret bruger</a></div> 
