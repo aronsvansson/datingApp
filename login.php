@@ -24,6 +24,19 @@
 
         <button type="submit" name="submit">Login</button>
         <div class="opret-bruger"><a href="register.php">Opret bruger</a></div> 
+        <?php
+            if (isset($_GET["error"])) {
+                if ($_GET["error"] == "emptyField") {
+                    echo "<p style='text-align:center; color: red;'>Udfyld alle felter </p>";
+                }
+                else if ($_GET["error"] == "wrongLogin") {
+                    echo "<p style='text-align:center; color: red;'>Forkert login, prøv igen </p>";
+                }
+                else if ($_GET["error"] == "noUser") {
+                    echo "<p style='text-align:center; color: red;'>Ingen bruger fundet </p>";
+                }
+            } 
+?>
          
      </form>
     </div>
@@ -33,13 +46,3 @@
 ?>
 
 
-<?php
-    if (isset($_GET["error"])) {
-        if ($_GET["error"] == "emptyField") {
-            echo "<p>Udfyld alle felter </p>";
-        }
-        else if ($_GET["error"] == "noUser") {
-            echo "<p>Ingen bruger fundet </p>";
-        }
-    }
-?>
