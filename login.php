@@ -11,14 +11,20 @@
 
 <!-- login form -->    
 <section class="signup-form">
-    <h2>Login</h2>
     <div class="signup-form-form">
-     <form action="login-backend.php" method="post">
-         <input type="text" name="username" placeholder="Brugernavn / Email...">
-         <input type="password" name="password" placeholder="Adgangskode...">
-         <button type="submit" name="submit">Login</button>
+
+     <form class="form-login" action="login-backend.php" method="post">
+     <h2>Login</h2>
+
+        <label for="username">Brugernavn</label>
+        <input type="text" name="username" placeholder="Brugernavn...">
+
+        <label for="password">Adgangskode</label>
+        <input type="password" name="password" placeholder="Adgangskode...">
+
+        <button type="submit" name="submit">Login</button>
+        <div class="opret-bruger"><a href="register.php">Opret bruger</a></div> 
          
-         <a href="register.php">Klik her for at oprette en konto</a>
      </form>
     </div>
 </section>

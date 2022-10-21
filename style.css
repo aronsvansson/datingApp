@@ -1,7 +1,20 @@
+* {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+body {
+  background: url(/img/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
 .wrapper {
   display: flex;
-  background-color: rgb(49, 47, 47);
+  background-color: rgba(255, 255, 255, 0.5);
   justify-content: space-between;
+  box-shadow: 0 0 20px rgba(8, 7, 16, 0.6);
 }
 .wrapper h1 {
   padding: 10px;
@@ -13,7 +26,17 @@
 }
 .wrapper ul {
   display: flex;
+  align-items: center;
 }
+
+.wrapper ul a:hover {
+  display: flex;
+  align-items: center;
+  color: antiquewhite;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
 .wrapper li {
   list-style: none;
   display: flex;
@@ -23,6 +46,7 @@
   text-decoration: none;
   color: white;
   float: right;
+  margin: 0 1vw;
   padding: 10px;
   font-size: 20px;
   font-weight: bold;
@@ -44,6 +68,257 @@
 .update_fail,
 .update_success,
 .loggedin {
+  text-align: center;
+  bottom: 5%;
+  margin: 0 auto;
+  padding: 10px 15px;
+}
+
+.forside-knapper {
   width: 100%;
-  text-align: left;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: space-around;
+}
+
+.overskrift {
+  padding: 5vh 0;
+  text-align: center;
+}
+
+.forside-knapper a {
+  text-decoration: none;
+  color: rgb(17, 17, 17);
+  padding: 15px 32px;
+  background-color: antiquewhite;
+  margin: 0 1em;
+  font-weight: bold;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.forside-knapper a:hover {
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid antiquewhite;
+  border-radius: 5px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* Login siden */
+.form-login {
+  height: 480px;
+  width: 380px;
+  background-color: rgba(255, 255, 255, 0.03);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 55%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+  color: white;
+}
+
+.form-form-register {
+  margin-top: 25px;
+  width: 50vw;
+  background-color: rgba(252, 252, 252, 0.75);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+  color: rgb(8, 8, 8);
+}
+
+.form-form-register input {
+  border: 1px solid black;
+}
+
+.form-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.register-info,
+.register-login {
+  width: 45%;
+}
+
+label {
+  display: block;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.signup-form-form input[type="text" i] {
+  padding: 0;
+}
+
+.signup-form-form input[type="password" i] {
+  padding: 0;
+}
+
+input {
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+  outline: none;
+  border: none;
+}
+
+.form-register input {
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+  outline: none;
+  border: 1px solid black;
+}
+
+.form-register button {
+  margin-top: 55px;
+  text-align: center;
+  width: 100%;
+  background-color: #ffffff;
+  color: rgb(17, 17, 17);
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid transparent;
+  padding: 15px 0;
+}
+
+.form-form-register h2 {
+  font-size: 32px;
+  text-align: center;
+  margin: -5px 0;
+}
+
+.form-register input::placeholder {
+  color: black;
+  padding-left: 10px;
+}
+
+.signup-form-form input::placeholder {
+  color: #dadada;
+  padding-left: 10px;
+}
+
+.signup-form-form input:hover {
+  outline: 2px solid #0001;
+}
+
+.signup-form-form form h2 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 42px;
+  text-align: center;
+}
+
+.signup-form-form button {
+  margin-top: 55px;
+  width: 100%;
+  background-color: #ffffff;
+  color: rgb(17, 17, 17);
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid transparent;
+}
+
+button:hover {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.form-inputs {
+  width: 100%;
+}
+
+.opret-bruger {
+  text-decoration: none;
+  font-size: smaller;
+  margin: auto;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.opret-bruger a {
+  text-decoration: none;
+  color: white;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.opret-bruger a:hover {
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+}
+
+select {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.register-error {
+  text-align: center;
+  padding-top: 65px;
+  color: red;
+}
+
+.register-success {
+  text-align: center;
+  color: black;
+}
+
+.register-success a {
+  text-decoration: none;
+}
+
+.update-button {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+  background-color: #ffffff;
+  color: rgb(17, 17, 17);
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid transparent;
+  padding: 15px 0;
 }

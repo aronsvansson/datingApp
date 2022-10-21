@@ -10,13 +10,18 @@
 <body>
     <nav>
         <div class="wrapper">
-         <a href ="welcome.php"><h1>Dating APP</h1></a>
+         <a href ="index.php"><h1>Dating APP</h1></a>
         <ul>
-            <li><a href="welcome.php">Profile</a></li>
-            <li><a href="match.php">Match list</a></li>
-            <li><a href="register.php">Sign up</a></li>
-            <li><a href="login.php">Log in</a></li>
-            <a href="logout.php">Logout</a>
+            <?php 
+            if(isset($_SESSION['id'])) {
+                echo "<li><a href='welcome.php'>Profil</a></li>";
+                echo "<li><a href='match.php'>Find dit match</a></li>";
+                echo "<li><a href='logout.php'>Log ud</a></li>";
+            } else {
+                echo "<li><a href='register.php'>Tilmeld</a></li>";
+                echo "<li><a href='login.php'>Log in</a></li>";
+            }
+            ?>
         </ul>
         </div>
     </nav>

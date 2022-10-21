@@ -48,9 +48,5 @@
             }
         }
         
-  
-
-
-    // header('location: register.php');
 
 ?>
