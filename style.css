@@ -158,7 +158,7 @@ label {
 .signup-form-form {
   display: flex;
   justify-content: center;
-  margin-top: 10vh;
+  margin: 10vh 0;
 }
 
 .signup-form-form input[type="text" i] {
