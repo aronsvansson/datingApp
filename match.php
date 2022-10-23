@@ -79,7 +79,7 @@
   
             $sql = "SELECT * FROM userInfo WHERE gender='$genderSearch' AND height='$heightSearch' AND AGE='$ageSearch'";
             $data = json_decode(CallMySQL($sql));
-    // Hej KATO. Dette statement kan vi simpelthen ikke få til at samarbejde. Vi har elleres sat den til at afhænge af $data variablen, som altså indeholder alle matchende brugere i databasen.
+    // Hej KATO. Dette if-statement kan vi simpelthen ikke få til at samarbejde. Vi har elleres sat den til at afhænge af $data variablen, som altså indeholder alle matchende brugere i databasen.
     // Dog, ved at bruge var_dump, kan vi se at den ALTID er ligmed false - OGSÅ når den faktisk finder brugere der matcher. Det betyder at den aldrig viser "Øv, ingen matches" fordi den aldrig er "tom".
     // Den viser dog de matches vi i databasen har fundet. 
             if (empty($data)) {
@@ -88,7 +88,7 @@
             } else {
                 foreach($data as $user){
                 foreach($user as $info){
-                echo "<div class='match-result'><div><p>"
+                echo "<div class='match-result'><div><p>MATCH! "
                 .$info->firstname." ".$info->lastname." er ".$info->age." år gammel og ".$info->height." cm høj</p></div></div>";
                 } 
             }
