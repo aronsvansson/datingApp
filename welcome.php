@@ -2,7 +2,7 @@
     include("mysql.php");
     session_start();
         if(!isset($_SESSION['id'])) {
-        header('location: login.php?error=wrongLogin');
+        header('location: login.php?error=noLogin');
         exit;
     }
     include_once 'header.php';
@@ -34,10 +34,10 @@
             <p style="text-align: center">Herunder kan du rediger i dine informationer og opdatere når alt er som det skal være!</p>';
             if (isset($_GET["status"])) {
                 if ($_GET["status"] == "success") {
-                    echo "<p class='update_success'>Din information blev opdateret.</p>";
+                    echo "<p class='update_success'>Din information blev opdateret</p>";
                 }
                 else if ($_GET["status"] == "fail") {
-                    echo "<p class='update_fail'>Noget gik galt, prøv igen.</p>";
+                    echo "<p class='update_fail'>Noget gik galt, prøv igen</p>";
                 }
                 else if ($_GET["status"] == "fail_empty") {
                     echo "<p class='update_fail'>Opdatering gik ikke igennem. Husk at udfylde alle felter</p>";

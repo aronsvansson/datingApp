@@ -4,8 +4,8 @@
     session_start();
     include_once 'header.php';
 
-    if (isset($_SESSION['token'])) {
-        header('location: profile.php');
+    if (isset($_SESSION['id'])) {
+        header('location: welcome.php');
     }
 ?>
 
@@ -31,6 +31,9 @@
                 }
                 else if ($_GET["error"] == "wrongLogin") {
                     echo "<p style='text-align:center; color: red;'>Forkert login, prøv igen </p>";
+                }
+                else if ($_GET["error"] == "noLogin") {
+                    echo "<p style='text-align:center; color: red;'>Du er ikke logget ind </p>";
                 }
                 else if ($_GET["error"] == "noUser") {
                     echo "<p style='text-align:center; color: red;'>Ingen bruger fundet </p>";

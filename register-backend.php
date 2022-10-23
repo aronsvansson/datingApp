@@ -27,9 +27,6 @@
         if(isset($_POST['age']) !=""){
         $_SESSION['age'] = $_POST['age'];}
 
-        if(isset($_POST['age']) !=""){
-        $_SESSION['age'] = $_POST['age'];}
-
         if(isset($_POST['username']) !=""){
         $_SESSION['username'] = $_POST['username'];}
         
@@ -42,7 +39,7 @@
             exit();
         }
         
-        if (mysqli_num_rows($res_user)> 0 ) {
+        if (mysqli_num_rows($res_user) > 0 ) {
             $_SESSION['username'] = "";
             header('location: register.php?error=userTaken');
             exit();
@@ -50,7 +47,6 @@
         
         if($password !== $passwordRepeat){
             header('location: register.php?error=wrongPassword');
-            
             exit();
         }
 
@@ -67,6 +63,12 @@
             $signupPass = "INSERT INTO userPass (id, username, password) 
             VALUES ('$data->id','$username', '$passwordHash')";
             $response = $mySQL->query($signupPass);
+
+            unset($_SESSION['firstname']);
+            unset($_SESSION['lastname']);
+            unset($_SESSION['height']);
+            unset($_SESSION['age']);
+            unset($_SESSION['username']);
 
             header('location: register.php?error=none');
             }

@@ -2,7 +2,7 @@
     include("mysql.php");
     session_start();
     if(!isset($_SESSION['id'])) {
-    header('location: login.php?error=wrongLogin');
+    header('location: login.php?error=noLogin');
     exit;
 }
 
