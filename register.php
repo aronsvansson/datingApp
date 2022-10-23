@@ -1,7 +1,7 @@
 <?php 
     include("mysql.php");
-    include_once 'header.php';
     session_start();
+    include_once 'header.php';
     if(isset($_SESSION['id'])) {
     header('location: welcome.php?status=loggedin');
     exit;
