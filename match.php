@@ -20,7 +20,7 @@
     <h2>Hvad ønsker du i dit næste match?</h2>
     <div class="match-search">
             <div class="register-info">
-                <label for="firstname">Højde</label>
+                <label for="firstname">Højde (cm)</label>
                 <input type="text" name="height" <?php if(isset($_SESSION['height'])!=""){ 
                     echo " value='".$_SESSION['height']."'"; }?>
                 ><br>
@@ -78,7 +78,9 @@
   
             $sql = "SELECT * FROM userInfo WHERE gender='$genderSearch' AND height='$heightSearch' AND AGE='$ageSearch'";
             $data = json_decode(CallMySQL($sql));
-
+    // Hej KATO. Dette statement kan vi simpelthen ikke få til at samarbejde. Vi har elleres sat den til at afhænge af $data variablen, som altså indeholder alle matchende brugere i databasen.
+    // Dog, ved at bruge var_dump, kan vi se at den ALTID er ligmed false - OGSÅ når den faktisk finder brugere der matcher. Det betyder at den aldrig viser "Øv, ingen matches" fordi den aldrig er "tom".
+    // Den viser dog de matches vi i databasen har fundet. 
             if (empty($data)) {
                     echo "<div class='match-result'><h2>Øv, ingen matches:(</h2><div>";
                     exit;

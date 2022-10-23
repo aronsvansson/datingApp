@@ -1,4 +1,4 @@
-<?php
+<!--
     include("mysql.php");
     session_start();
         if(!isset($_SESSION['id'])) {
