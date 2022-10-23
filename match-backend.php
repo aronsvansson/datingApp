@@ -1,4 +1,7 @@
-<!--
+// Hej KATO. Vi lavede først backenden til match-siden i dette dokument. Men vi kunne simpelthen ikke få informationen med videre i match.php filen. Vi beklager at det
+ikke kunne laves "ordentligt", så vi har stoppet backenden ind i match.php så informationen aldrig mistes ved side-skift. 
+
+<!-- 
     include("mysql.php");
     session_start();
         if(!isset($_SESSION['id'])) {

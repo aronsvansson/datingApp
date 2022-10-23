@@ -18,6 +18,7 @@
 
 <form class="match-bar" action="" name="register" method="post">
     <h2>Hvad ønsker du i dit næste match?</h2>
+    <p style="font-size: 12px;">KATO! Prøv f.eks: Højde: 162, Alder: 27 Køn: Kvinde!</p>
     <div class="match-search">
             <div class="register-info">
                 <label for="firstname">Højde (cm)</label>
